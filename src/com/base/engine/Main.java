@@ -5,6 +5,7 @@
 package com.base.engine;
 
 
+import java.util.ArrayList;
 import com.base.game.Game;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +33,11 @@ public class Main
         
         cleanUp();
     }
+    public static ArrayList<GameObject> sphereCollide(float x, float y, float radius)
+    {
+        return game.sphereCollide(x, y, radius);
+    }
+    
     private static void initGame()
             
     {
