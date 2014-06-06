@@ -1,6 +1,7 @@
 
-package com.base.game.gameobject.item;
+package com.base.game.gameobject.items;
 
+import com.base.game.gameobject.Item;
 import com.base.game.gameobject.Player;
 
 /**

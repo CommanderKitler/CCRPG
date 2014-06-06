@@ -2,12 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.base.game.gameobject.item;
+package com.base.game.gameobject;
 
 import com.base.engine.GameObject;
 import com.base.engine.Physics;
 import com.base.engine.Sprite;
-import com.base.game.gameobject.Player;
 
 /**
  *

@@ -5,9 +5,12 @@
 package com.base.game;
 
 import com.base.engine.GameObject;
-import com.base.game.gameobject.Enemys.CookieMonster;
+import com.base.engine.Physics;
+import com.base.game.gameobject.enemys.CookieMonster;
 import com.base.game.gameobject.Player;
-import com.base.game.gameobject.item.Cube;
+import com.base.game.gameobject.enemys.PinkGiant;
+import com.base.game.gameobject.items.Cube;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import org.lwjgl.opengl.Display;
 
@@ -32,6 +35,7 @@ public class Game
        objects.add(player);
        objects.add(new Cube(32,32, player));
        objects.add(new CookieMonster(300,500,1));
+       objects.add(new PinkGiant(550,330,1));
        
    }
     
@@ -71,6 +75,25 @@ public class Game
         
         return res;
     }
+    
+  public ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
+  {
+      ArrayList<GameObject> res = new ArrayList<GameObject>();
+      
+      float sx = x2 - x1;
+      float sy = y2 - y1;
+      
+      Rectangle collider = new Rectangle((int)x1,(int)y1,(int)sx,(int)sy);
+      
+      for(GameObject go : objects)
+      {
+          if(Physics.checkCollision(collider, go) != null)
+              res.add(go);
+      }
+      return res;
+  }
+  
+  
    
  
 }

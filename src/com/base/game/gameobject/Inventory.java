@@ -4,8 +4,6 @@
  */
 package com.base.game.gameobject;
 
-import com.base.game.gameobject.item.Item;
-
 /**
  *
  * @author sebastian

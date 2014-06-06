@@ -7,6 +7,7 @@ package com.base.engine;
 
 import java.util.ArrayList;
 import com.base.game.Game;
+import com.base.game.Time;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
@@ -33,9 +34,15 @@ public class Main
         
         cleanUp();
     }
+    
     public static ArrayList<GameObject> sphereCollide(float x, float y, float radius)
     {
         return game.sphereCollide(x, y, radius);
+    }
+    
+    public static ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
+    {
+        return game.rectangleCollide(x1,y1,x2,y2);
     }
     
     private static void initGame()
@@ -83,12 +90,15 @@ public class Main
     
     private static void gameLoop()
     {
-     while(!Display.isCloseRequested())
-     {
-         getInput();
-         update();
-         render();
-     }
+        Time.init();
+        
+        while(!Display.isCloseRequested())
+        {
+            Time.update();
+            getInput();
+            update();
+            render();
+        }
     }
     
     private static void cleanUp()
